@@ -640,7 +640,7 @@ h4 {
         flex-direction: column;
     }
 
-    FAQs {
+    .FAQs {
         padding-left: 20px;
         padding-right: 20px;
     }
