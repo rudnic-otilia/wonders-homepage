@@ -40,26 +40,73 @@ h1 {
 .homepage {
     background: linear-gradient(#F5F5F5, #DDECFF, #F5F5F5);
 }
+
 .header-container {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     margin-right: auto;
     margin-left: auto;
+    padding-top: 32.5px;
+    padding-bottom: 32.5px;
     height: 116px;
     max-width: 1440px;
     padding-left: 64px;
     padding-right: 64px;
 }
 
+.header-container li:hover {
+    transform: scale(1.04);
+}
+
+.burger-icon {
+    height: 24px;
+    display: none;
+    flex-direction: column;
+    gap: 7px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    cursor: pointer;
+}
+
+.burger-icon .line1{
+    width: 30px;
+    height: 2px;
+    background-color:  var(--color-primary-blue);
+}
+
+.burger-icon .line2{
+    width: 16px;
+    height: 2px;
+    background-color:  var(--color-primary-blue);
+}
+
+.burger-icon .line3 {
+    width: 30px;
+    height: 2px;
+    background-color:  var(--color-primary-blue);
+}
+
+.burger-icon.active .line1 {
+    transform: rotate(45deg) translate(6px, 6px);
+}
+
+.burger-icon.active .line2 {
+    opacity: 0;
+}
+
+.burger-icon.active .line3 {
+    transform: rotate(-45deg) translate(7px, -7px);
+}
+
+
 .logo {
     font-size: 2.125rem;
-    padding-top: 32px;
     display: flex;
     align-items:  center;
     gap: 15px;
 }
 .menu-list {
-    padding-top: 42px;
     display: flex;
     align-items: center;
     justify-content:  space-between;
@@ -81,7 +128,7 @@ h1 {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding-top: 64px;
+    padding-top: 32px;
     padding-left: 64px;
     padding-right: 64px;
 }
@@ -472,15 +519,50 @@ h4 {
     padding-bottom: 76px;
 }
 
+.burger-menu {
+    height: calc(100dvh - 116px);
+    background-color: var(--color-primary-blue);
+    position: fixed;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+}
+
+.burger-menu nav {
+    margin-top: 128px;
+    display: flex;
+    flex-direction: column;
+    gap: 96px;
+    padding-inline: 32px;
+}
+
+.burger-menu nav a {
+    color: var(--white);
+    font-size: 3rem;
+}
+
+.hidden {
+    display: none;
+}
+
 @media (max-width: 768px) {
+    .burger-icon {
+        display: flex;
+    }
+    .menu-list {
+        display: none;
+    }
+
     .header-container {
         padding-left: 32px;
         padding-right: 32px;
     }
+
     .homepage-content-container {
         padding-left: 32px;
         padding-right: 32px;
     }
+
     .image-form {
         display: none;
     }
@@ -660,5 +742,14 @@ h4 {
 
     .links-container {
         flex-wrap: wrap;
+    }
+
+    .burger-menu nav {
+        margin-top: 64px;
+        gap: 64px;
+    }
+
+    .burger-menu nav a {
+        font-size: 2rem;
     }
 }
