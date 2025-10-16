@@ -19,9 +19,9 @@
                 <path fill-rule="evenodd" clip-rule="evenodd" d="M59.2163 24.5786V20.3137L56.8388 17.985L59.2303 19.3378V12.2281L50.3323 22.2163L47.6113 25.4222L51.3615 23.0116L46.9352 27.6512L46.2931 30H44.3848H40.4802H33.5049L40.4802 28.5327V25.9956V19.5777V3.49431L33.7795 13.7348H36.0542L32.6121 21.8674L29.3541 23.4939L32.1196 24.8199L31.2612 26.3138L28.935 30H25.2665H24.4466H14.3859L24.4466 29.253V25.2797L24.5119 18.2531L21.4236 18.705L24.5886 16.9879L24.6814 12.2594L17.9196 19.2773L18.288 20.9643L14.1075 24.278L16.0133 23.735L9.76091 30H6.27066H5.51648H7.88231e-07L6.36248 28.1088L9.55836 20.9632L13.1242 21.6868L25.2962 8.07215L30.4598 17.7102L32.3042 9.51804L39.5581 0H42.3856L45.4529 8.25277L49.3375 10.7306L50.8526 17.9356L59.2303 9.39784L62.1637 12.1666L68.4511 25.5421L73 30H61.1676H59.7997H59.2303H50.287L59.2303 29.0353V28.0559L56.1492 26.3138L59.2163 24.5786Z" fill="#202020"/>
             </svg><span>Wonders</span></div>
                 <ul id="header-navigation" class="menu-list">
-                    <li class="menu-item"><a href="#">Mobile App</a></li>
-                    <li class="menu-item"><a href="#">FAQs</a></li>
-                    <li class="menu-item"><a href="#">Contact</a></li>
+                    <li class="menu-item"><a href="#app">Mobile App</a></li>
+                    <li class="menu-item"><a href="#FAQs">FAQs</a></li>
+                    <li class="menu-item"><a href="#contact">Contact</a></li>
                     <li class="menu-item"><a href="#" class="signUp">Sign up</a></li>
                 </ul>
             <div id="burger-icon" class="burger-icon">
@@ -33,9 +33,9 @@
 
         <div id="burger-menu" class="burger-menu hidden">
             <nav>
-                <a href="#">Mobile app</a>
-                <a href="#">FAQs</a>
-                <a href="#">Contact</a>
+                <a href="#app">Mobile app</a>
+                <a href="#FAQs">FAQs</a>
+                <a href="#contact">Contact</a>
                 <a class="bold-link" href="#">Sign Up</a>
             </nav>
         </div>
@@ -61,26 +61,31 @@
                                     <circle cx="9" cy="7" r="4" fill="#0578FF"/>
                                     <path d="M3 20C1.89543 20 0.974346 19.0907 1.24685 18.0202C2.12788 14.5595 5.26504 12 9 12C12.735 12 15.8721 14.5595 16.7531 18.0202C17.0257 19.0907 16.1046 20 15 20H3Z" fill="#0578FF"/>
                                 </svg>
-                                <button id="minus">-</button>1
-                                <button id="plus">+</button>
+                                <button id="minus" type="button">-</button>
+                                <span id="counter">1</span>
+                                <button id="plus" type="button">+</button>
                             </div>
                         </div>
-                        <div class="field">
+                        <div class="field-departure">
                             <label>Departure</label>
-                            <input type="text" name="departure" placeholder="Your City/Station">
+                            <input id="departure-input" type="text" name="departure" placeholder="Your City/Station">
+                            <ul id="autocomplete-dropdown" class="autocomplete-dropdown hidden">
+                            </ul>
                         </div>
-                        <div class="field">
+                        <div class="field-arrival">
                             <label>Arrival</label>
-                            <input type="text" name="arrival" placeholder="Where to?">
+                            <input id="arrival-input" type="text" name="arrival" placeholder="Where to?">
+                            <ul id="arrival-dropdown" class="autocomplete-dropdown hidden">
+                            </ul>
                         </div>
                         <div class="field-dates">
                             <label>Pick your lucky day</label>
                             <div class="dates">
-                                <input type="date" name="depart" required>
-                                <input type="date" name="return" required>
+                                <input id="depart-date" type="date" name="depart">
+                                <input id="return-date" type="date" name="return">
                             </div>
                         </div>
-                        <input type="submit" name="find" value="Find My Alpine Ride">
+                        <button id="submit-form" type="submit">Find My Alpine Ride</button>
                     </form>
                 </div>
             </div>
@@ -128,7 +133,7 @@
                 </div>
             </div>
         </div>
-        <div class="app">
+        <div class="app" id="app">
             <h1>Free downloads app now!</h1>
             <div class="downloads">
                 <div class="badge">
@@ -253,8 +258,16 @@
                 </div>
             </div>
         </div>
-        <div class="FAQs">
+        <div class="FAQs" id="FAQs">
             <h1>FAQs</h1>
+            <div class="faq-item">
+                <button class="accordion">Alpine Bus Journeys?<span class="icon">+</span></button>
+                <div class="faq-answer">
+                    <p>Forget crowded cities! Alpine Bus Journeys are your comfy seat with panoramic windows to breathtaking mountain vistas,
+                        charming villages, and air so fresh it might make you yodel (please don't, unless you're outside).
+                        It's transportation with a side of unparalleled scenery (and maybe a hairpin turn).</p>
+                </div>
+            </div>
             <div class="faq-item">
                 <button class="accordion">What about seating options?<span class="icon">+</span></button>
                 <div class="faq-answer">
@@ -297,9 +310,7 @@
                 </div>
             </div>
             <div class="faq-item">
-                <div class="faq-question">
-                    <button class="accordion">Peak Season Surcharge?<span class="icon">+</span></button>
-                </div>
+                <button class="accordion">Peak Season Surcharge?<span class="icon">+</span></button>
                 <div class="faq-answer">
                     <p>It's the little extra you pay to enjoy the authentic experience of sharing breathtaking
                         views with a lot of your closest friends (who you haven't met yet) while strategically
@@ -307,7 +318,7 @@
                 </div>
             </div>
         </div>
-            <div class="contact-card-container">
+            <div class="contact-card-container" id="contact">
                 <div class="contact-card">
                     <h1>Contact us</h1>
                     <div class="contact-card-content">
