@@ -4,38 +4,30 @@
     padding: 0;
     font-family: "Poppins", sans-serif;
 }
-:root {
-    --color-primary: #202020;
-    --color-primary-blue: #006AF5;
-    --color-primary-grey: #90A3BF;
-    --white: #fff;
-    --good-yellow: #ffc501;
-}
 
-/*:root {*/
-/*    --primary-blue-train: #0578ff;*/
-/*    --primary-black-train: #202020;*/
-/*    --white: #fff;*/
-/*    --primary-grey: #90a3bf;*/
-/*    --primary-black-train-50: rgba(32, 32, 32, 0.5);*/
-/*    --primary-grey-50: rgba(144, 163, 191, 0.5);*/
-/*    --good-yellow: #ffc501;*/
-/*    --bg-gray: #f5f5f5;*/
-/*    --green: #43a047;*/
-/*    --red: #ff6060;*/
-/*    --primary-blue-train-10: rgba(5, 120, 255, 0.1);*/
-/*    --semantic-colors-primary,-contrast: #fff;*/
-/*    --primary-black: #202020;*/
-/*    --primary-blue: #0578ff;*/
-/*    --secondary-text: rgba(27, 43, 65, 0.69);*/
-/*    --semantic-colors-primary: #006af5;*/
-/*    --primary-black-50: rgba(32, 32, 32, 0.5);*/
-/*}*/
+:root {
+    --primary-blue-train: #0578ff;
+    --primary-black-train: #202020;
+    --white: #fff;
+    --primary-grey: #90a3bf;
+    --primary-black-train-50: rgba(32, 32, 32, 0.5);
+    --primary-grey-50: rgba(144, 163, 191, 0.5);
+    --good-yellow: #ffc501;
+    --bg-gray: #f5f5f5;
+    --green: #43a047;
+    --red: #ff6060;
+    --primary-blue-train-10: rgba(5, 120, 255, 0.1);
+    --primary-black: #202020;
+    --primary-blue: #0578ff;
+    --secondary-text: rgba(27, 43, 65, 0.69);
+    --semantic-colors-primary: #006af5;
+    --primary-black-50: rgba(32, 32, 32, 0.5);
+}
 
 h1 {
     font-size: 4rem;
     font-weight: 700;
-    color: var(--color-primary);
+    color: var(--primary-black-train);
 }
 .homepage {
     background: linear-gradient(#F5F5F5, #DDECFF, #F5F5F5);
@@ -56,7 +48,6 @@ h1 {
     transform: scale(1.04);
 }
 
-
 .burger-icon {
     display: none;
     flex-direction: column;
@@ -72,7 +63,7 @@ h1 {
     left: 0;
     width: 30px;
     height: 2px;
-    background-color: var(--color-primary-blue);
+    background-color: var(--primary-blue-train);
     border-radius: 2px;
     transition: all 0.3s ease;
 }
@@ -81,21 +72,21 @@ h1 {
     top: 0;
     width: 30px;
     height: 2px;
-    background-color:  var(--color-primary-blue);
+    background-color:  var(--primary-blue-train);
 }
 
 .burger-icon .line2{
     top: 10px;
     width: 16px;
     height: 2px;
-    background-color:  var(--color-primary-blue);
+    background-color:  var(--primary-blue-train);
 }
 
 .burger-icon .line3 {
     top: 20px;
     width: 30px;
     height: 2px;
-    background-color:  var(--color-primary-blue);
+    background-color:  var(--primary-blue-train);
 }
 
 .burger-icon.active .line1 {
@@ -130,7 +121,7 @@ h1 {
 
 .menu-item > a {
     text-decoration: none;
-    color: var(--color-primary);
+    color: var(--primary-black-train);
 }
 
 .signUp {
@@ -152,7 +143,7 @@ h1 {
 
 .left-side > span {
     margin-top:  32px;
-    color: var(--color-primary);
+    color: var(--primary-black-train);
     font-size: 1rem;
 }
 
@@ -180,26 +171,20 @@ form {
     grid-column: 1 / 3;
 }
 
+.trip-label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+    font-size: 0.875rem;
+}
+
 .person-container {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     gap: 6px;
     align-items: center;
-}
-
-input[type="radio"] {
-    appearance: none;
-    vertical-align: middle;
-    background-color: var(--color-primary-grey);
-    width: 18px;
-    height: 18px;
-    border-radius: 50px;
-    margin: 0;
-}
-
-input[type="radio"]:checked {
-    background-color: var(--color-primary-blue);
 }
 
 .autocomplete-dropdown {
@@ -213,7 +198,7 @@ input[type="radio"]:checked {
     display: flex;
     flex-direction: column;
     gap: 2px;
-    color: var(--color-primary);
+    color: var(--primary-blue-train);
     animation: dropdownAppear 0.1s ease-in-out;
     max-height: 200px;
     overflow-y: auto;
@@ -229,13 +214,13 @@ input[type="radio"]:checked {
 }
 
 .autocomplete-dropdown li:hover {
-    background: var(--color-primary-grey);
+    background: var(--primary-grey);
     color: white;
 }
 
 .not-found-span {
     font-size: 0.875rem;
-    color: var(--color-primary-grey);
+    color: var(--primary-grey);
 }
 
 button {
@@ -249,11 +234,11 @@ button:hover {
 }
 
 #minus {
-    color: var(--color-primary-grey);
+    color: var(--primary-grey);
 }
 
 #plus {
-    color: var(--color-primary-blue);
+    color: var(--primary-blue-train);
 }
 
 button[type="submit"] {
@@ -261,7 +246,7 @@ button[type="submit"] {
     height: 62px;
     border-radius: 10px;
     border: none;
-    background-color: var(--color-primary-blue);
+    background-color: var(--primary-blue-train);
     color: var(--white);
     font-size: 1.25rem;
     font-weight: 700;
@@ -285,7 +270,7 @@ input[type="text"]:focus {
 }
 
 input[type="text"]::placeholder {
-    color: var(--color-primary-grey);
+    color: var(--primary-grey);
 }
 
 .field-departure {
@@ -313,7 +298,7 @@ input[type="text"]::placeholder {
     border: none;
     padding-left: 24px;
     padding-right: 24px;
-    color: var(--color-primary-grey);
+    color: var(--primary-grey);
 }
 
 .dates > input:focus {
@@ -321,12 +306,12 @@ input[type="text"]::placeholder {
 }
 
 .dates > input:valid {
-    color: var(--color-primary);
+    color: var(--primary-black-train);
 }
 
 .field-departure > label, .field-arrival > label {
     margin-bottom: 16px;
-    color: var(--color-primary);
+    color: var(--primary-black-train);
     font-weight: 600;
 }
 
@@ -338,14 +323,14 @@ input[type="text"]::placeholder {
 .field-dates > label {
     display: block;
     margin-bottom: 16px;
-    color: var(--color-primary);
+    color: var(--primary-black-train);
     font-weight: 600;
 }
 
 .interesting-fact {
     height: 224px;
     width: 100%;
-    background-color: var(--color-primary-blue);
+    background-color: var(--primary-blue-train);
     margin-top: 64px;
     display: flex;
     justify-content: center;
@@ -444,6 +429,10 @@ input[type="text"]::placeholder {
     margin-top: 60px;
 }
 
+.FAQs > h1 {
+    margin-bottom: 50px;
+}
+
 .FAQs {
     margin-top: 128px;
     padding-left: 177px;
@@ -453,7 +442,7 @@ input[type="text"]::placeholder {
 .accordion {
     font-weight: 500;
     font-size: 1.125rem;
-    color: var(--color-primary);
+    color: var(--primary-black-train);
     padding: 16px 0;
     cursor: pointer;
     display: flex;
@@ -462,16 +451,19 @@ input[type="text"]::placeholder {
     justify-content: space-between;
 }
 
-.faq-item:not(:first-child) {
-    border-top: 1px solid var(--color-primary);
+.faq-item {
+    border-top: 1px solid var(--primary-black-train);
 }
 
+.faq-item-first {
+    border-top: none;
+}
 
 .faq-answer {
     display: none;
     font-weight: 400;
     font-size: 1rem;
-    color: var(--color-primary);
+    color: var(--primary-black-train);
     padding: 32px 0;
 }
 
@@ -489,12 +481,13 @@ input[type="text"]::placeholder {
     margin-top: 146px;
     background-color: var(--white);
     border-radius: 10px;
-    border: 0.5px solid var(--color-primary);
+    border: 0.5px solid var(--primary-black-train);
     padding: 40px;
     text-align: center;
     position: relative;
     z-index: 2;
 }
+
 
 .contact-card {
     display: flex;
@@ -508,7 +501,7 @@ input[type="text"]::placeholder {
     flex-direction: column;
     align-items: center;
     font-size: 1.75rem;
-    color: var(--color-primary);
+    color: var(--primary-black-train);
     font-weight: 400;
     margin-top: 20px;
 }
@@ -518,13 +511,13 @@ input[type="text"]::placeholder {
     flex-direction: column;
     align-items: center;
     font-size: 1.125rem;
-    color: var(--color-primary);
+    color: var(--primary-black-train);
     font-weight: 400;
     margin-top: 20px;
 }
 
 .footer-container {
-    background-color: var(--color-primary-blue);
+    background-color: var(--primary-blue-train);
     margin-top: -200px;
     padding-left: 64px;
     padding-right: 64px;
@@ -589,8 +582,9 @@ h4 {
 
 .burger-menu {
     height: calc(100dvh - 116px);
-    background-color: var(--color-primary-blue);
+    background-color: var(--primary-blue-train);
     position: fixed;
+    z-index: 1000;
     width: 100%;
     left: 0;
     bottom: 0;
@@ -716,18 +710,18 @@ h4 {
 }
 
 @media (max-width: 360px) {
+
     h1 {
         font-size: 2rem;
     }
+
     .logo > span {
         display: none;
     }
 
-
     .left-side {
         width: 320px;
     }
-
 
     .left-side > span {
         font-size: 0.6875rem;
@@ -743,7 +737,7 @@ h4 {
 
     .journey-type,
     .field-dates,
-    input[type="submit"] {
+    button[type="submit"] {
         grid-column: 1;
     }
 
