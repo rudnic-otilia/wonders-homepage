@@ -70,11 +70,33 @@ const STATIONS = [
 const headerNav = document.getElementById('header');
 const burgerIcon = document.getElementById('burger-icon');
 const burgerMenu =  document.getElementById('burger-menu');
+const menuLinks = burgerMenu.querySelectorAll('a');
 
 burgerIcon.addEventListener('click', function(){
     burgerMenu.classList.toggle('hidden');
     burgerIcon.classList.toggle('active');
-})
+    if (burgerIcon.classList.contains('active')) {
+        document.body.style.overflow = 'hidden';
+    } else {
+        document.body.style.overflow = 'auto';
+    }
+});
+
+window.addEventListener('resize', function () {
+    if (window.innerWidth > 768) {
+        burgerMenu.classList.add('hidden');
+        burgerIcon.classList.remove('active');
+        document.body.style.overflow = 'auto';
+    }
+});
+
+menuLinks.forEach(link => {
+    link.addEventListener('click', function () {
+        burgerMenu.classList.add('hidden');
+        burgerIcon.classList.remove('active');
+        document.body.style.overflow = 'auto';
+    });
+});
 
 // FAQ section Accordion
 const faqQuestions = document.querySelectorAll(".accordion");
