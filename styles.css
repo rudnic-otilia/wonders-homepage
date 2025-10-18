@@ -458,7 +458,6 @@ input[type="text"]::placeholder {
 .faq-item-first {
     border-top: none;
 }
-
 .faq-answer {
     display: none;
     font-weight: 400;
