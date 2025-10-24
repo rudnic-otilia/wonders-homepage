@@ -1,157 +1,81 @@
-# Wonders - Билеты на вершину
+# Wonders Homepage
 
-Figma - https://www.figma.com/design/Qq0LN905byLasCfNboVzU2/Module-1-Wonders--Share-?node-id=0-1&t=sIWsM0vWwHgRRTzO-1
+This is my Wonders Homepage project, built as part of the first module of the Wonders course.
+The main goal was to create a responsive travel website homepage where users can search for bus routes between Alpine stations.
+
+## Project Idea
+
+I started this project from scratch, following the given Figma design:
+https://www.figma.com/design/Qq0LN905byLasCfNboVzU2/Module-1-Wonders--Share-?node-id=0-1&t=sIWsM0vWwHgRRTzO-1
+
+The development process had three stages:
+
+HTML – building the structure and search form.
+
+CSS – making it look nice and responsive.
+
+JavaScript – adding interactivity and form logic.
+
+## What the Homepage Does
+
+The homepage includes:
+
+A search form with “From” and “To” stations (with dropdown suggestions).
+
+A trip type selector – either One Way or Round Trip.
+
+A calendar to choose travel dates.
+
+A passenger counter with a limit of 12 people.
+
+A Find My Alpine Ride button that simulates navigation to another page.
+
+A burger menu for mobile screens.
+
+I made sure the layout works properly at 1440px, 768px, and 360px.
+
+## What I Used
+
+HTML5 – to structure the page
+
+CSS3 – for styling and responsive layout
+
+JavaScript (ES6) – for all the dynamic parts
+
+Git & GitHub – version control
+
+GitHub Pages – deployment
+
+## JavaScript Features
+
+Here’s what I implemented using JS:
+
+*Opening and closing the burger menu.
+
+*Filtering dropdown stations as the user types.
+
+*A calendar with date restrictions (no past dates, proper round-trip logic).
+
+*Adding/removing passengers, up to 12.
+
+*Validating the search form:
+
+*All fields must be filled.
+
+*Departure and arrival can’t be the same.
+
+*The date must be valid (not in the past).
+
+*When the user clicks “Find My Alpine Ride,” it imitates a page change to bus-list.html.
 
 
-**Этапы разработки:**
+## How I Deployed It
 
-*	Сначала HTML: сделаем каркас сайта.
-*	Потом CSS: красиво его оформим.
-*	И завершим JavaScript: добавим "мозги" – чтобы все работало, как задумано.
+I hosted the project on GitHub Pages:
 
+https://rudnic-otilia.github.io/wonders-homepage/
 
-**Общие технические требования:**
+## About Me
 
-*   Комментировать код для лучшей читаемости и понимания.
-*   Использовать GitHub для хранения проекта.
-*   Использивать GitHub Pages или другой сервис для деплоя проекта.
-*   Проверять работу в разных браузерах Chrome, Firefox, Edge, Safari.
-*   Краткое описание проекта и инструкция по запуску в файле README.md.
-
-
----------------
-
-## 1. Homepage
-
-Создание главной страницы сайта для разрешений 1440px, 768px, 360px, включая форму поиска, выпадающие списки, бургер-меню.
-
-*   **Задачи:**
-
-    *   **HTML:**
-        *   Создать общую структуру страницы.
-        *   Добавляем форму поиска:
-            *   Поля, куда будем вводить станции "Откуда" (Departure) и "Куда" (Arrival) (с выпадающими подсказками!).
-            *   Выбор типа поездки: "Туда и обратно" (Round Trip) или "В один конец" (One Way)(радиокнопки).
-            *   Календарь, чтобы выбирать дату поездки.
-            *   Счётчик пассажиров (сколько человек поедет).
-            *   Кнопка `Find My Alpine Ride`.
-
-    *   **CSS:**
-        *   Стилизация всех элементов страницы согласно макетам.
-        *   Полная адаптивная верстка для разрешений 1440px, 768px, 360px.
-        *   Реализация и стилизация бургер-меню для мобильных разрешений.
-        *   Стилизация выпадающих списков станций.
-
-    *   **JavaScript:**
-        *   Логика работы бургер-меню (открытие/закрытие).
-        *   Выпадающие меню "Откуда" (Departure) и "Куда" (Arrival):
-            * Реализуйте автодополнение на основе массива данных `Stations` - опционально!
-            * При вводе текста фильтровать список, отображая подходящие варианты.
-        *	Календарь:
-            * Реализуйте календарь с выбором дат.
-            * Настройте ограничения для обратной даты.
-        *   Валидация формы поиска:
-            *   Проверка заполненности полей.
-            *   Проверка корректности выбора станций (чтобы не совпадали).
-            *   Проверка даты (чтобы не была в прошлом).
-        *   Обработка добавления/уменьшения количества пассажиров. Добавьте логику для лимита пассажиров (не больше 12).
-        *   При нажатии на кнопку `Find My Alpine Ride` должна открываться страница bus-list.html (пока мы делаем имитацию перехода).
-
-## 2. **Организация проекта и файлов**
-
-**Минимальная структура:**
-
-```
-wonders-landing/
-├── index.html
-├── style.css
-├── assets/
-│    ├── images/
-│    └── icons/
-└── README.md
-```
-
-*Так же вы можете добавить*: `assets/fonts/` — если добавляете свои шрифты.
-
-В HTML подключайте только необходимые файлы (избегайте мусора и лишних подключений).
-
-## 3. **Дедлайн**
-
-Проект рассчитан на 2 недели.
-
-P.S Модуль 2: Fullstack,начинается с двух теоретических уровней (задач не будет):
-- Уровень 1 Устройство сети
-- Уровень 2 Протокол HTTP
-
----------------
-
-## 50 автобусных станций в Альпах
-
-```javascript 
-const Stations = [
-    // Switzerland
-    "Zermatt Bus Terminal",
-    "Interlaken Ost Bus Station",
-    "Grindelwald Bus Terminal",
-    "Lauterbrunnen Bahnhof",
-    "Lucerne Bahnhofquai",
-    "Chamonix-Mont-Blanc Sud (France, near Swiss border)",
-    "Geneva Bus Station",
-    "Bern PostAuto Terminal",
-    "Gstaad Bus Station",
-    "St. Moritz Bahnhof PostAuto",
-    "Verbier Village",
-    "Davos Platz Postautohaltestelle",
-    "Andermatt Gotthardpass",
-    "Täsch Bahnhof (Shuttle to Zermatt)",
-    "Flims Dorf Post",
-
-    // France
-    "Chamonix Sud Bus Station",
-    "Annecy Gare Routière",
-    "Grenoble Gare Routière",
-    "Nice Airport (Bus to Alps)",
-    "Bourg-Saint-Maurice Gare Routière",
-    "Morzine Gare Routière",
-    "Les Gets Gare Routière",
-    "Val d'Isère Centre",
-    "Courchevel 1850",
-    "Megève Place du Village",
-
-    // Italy
-    "Aosta Autostazione",
-    "Bolzano Autostazione",
-    "Trento Autostazione",
-    "Cortina d'Ampezzo Autostazione",
-    "Bormio Bus Station",
-    "Livigno Centro",
-    "Merano Autostazione",
-    "Sestriere Bus Stop",
-    "Ortisei (St. Ulrich) Autostazione",
-    "Canazei Piazza Marconi",
-
-    // Austria
-    "Innsbruck Hauptbahnhof Bus Terminal",
-    "Salzburg Süd Busbahnhof",
-    "Mayrhofen Bahnhof",
-    "Lech am Arlberg Postamt",
-    "Kitzbühel Hahnenkammbahn",
-    "Ischgl Seilbahn",
-    "Zell am See Postplatz",
-    "Bad Gastein Bahnhof",
-    "St. Anton am Arlberg Bahnhof",
-    "Sölden Postamt",
-
-    // Germany
-    "Garmisch-Partenkirchen Bahnhof (Bus Station)",
-    "Berchtesgaden Busbahnhof",
-    "Oberstdorf Busbahnhof",
-    "Füssen Bahnhof (Bus Station)",
-    "Mittenwald Bahnhof (Bus Station)",
-
-    // Slovenia
-    "Bled Bus Station",
-    "Bohinj Jezero",
-    "Kranjska Gora Avtobusna Postaja"
-];
-```
+I built this project as a student learning fullstack development.
+This was a great way to practice responsive design, DOM manipulation, and overall project structure.
